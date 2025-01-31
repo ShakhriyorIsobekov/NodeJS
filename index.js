@@ -3,7 +3,7 @@ const server = http.createServer((request, response) => {
   // request = serverga so'rov
   // response = javob
   console.log(request.url);
-  response.write("Hello Shakhriyor");
+  response.write("<h1>Hello Shakhriyor Hafizul Qur'an</h1> ");
   response.end();
 });
 
