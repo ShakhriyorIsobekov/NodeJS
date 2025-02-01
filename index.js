@@ -32,6 +32,24 @@ const server = http.createServer((req, res) => {
           res.end(content);
         }
       );
+    } else if (req.url == "/api/admin") {
+      res.writeHead(200, { "Content-Type": "text/json" });
+      const admin = {
+        name: "Shakhriyor",
+        surname: "Isobekov",
+        age: 20,
+        job: "Full-Stack  developer",
+      };
+
+      // res.end(JSON.stringify(admin));
+      fs.readFile(
+        path.join(__dirname, "templates", "index.html"),
+        "utf-8",
+        (err, content) => {
+          if (err) throw new Error();
+          res.end(admin.name);
+        }
+      );
     }
   } else if (req.method == "POST") {
     const names = [];
