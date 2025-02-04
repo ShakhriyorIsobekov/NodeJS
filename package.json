@@ -1,0 +1,21 @@
+{
+  "name": "cli---project",
+  "version": "1.0.0",
+  "description": "weather-cli-project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Shakhriyor Isobekov",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "chalk": "^5.4.1",
+    "dedent-js": "^1.0.1"
+  }
+}
