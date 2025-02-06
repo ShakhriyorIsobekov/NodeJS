@@ -22,6 +22,12 @@ router.post("/login", (req, res) => {
 
 router.post("/register", (req, res) => {
   console.log(req.body);
+  const userData = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+  };
   res.redirect("/");
 });
 

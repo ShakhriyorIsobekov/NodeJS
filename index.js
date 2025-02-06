@@ -27,8 +27,19 @@ app.use(express.json());
 app.use(AuthRoutes);
 app.use(ProductRoutes);
 
-const url = process.env.MONGO_URI;
-mongoose.connect(url);
-
 const PORT = process.env.PORT || 4100;
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
+
+// const startApp = async () => {
+//   try {
+//     mongoose.set("strictQuery", false);
+//     await mongoose.connect(process.env.MONGO_URI);
+//     console.log(`Mongo Connected`);
+
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+// startApp();
+
+// Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
