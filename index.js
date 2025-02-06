@@ -32,12 +32,10 @@ app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
 
 // const startApp = async () => {
 //   try {
-//     mongoose.set("strictQuery", false);
 //     await mongoose.connect(process.env.MONGO_URI);
-//     console.log(`Mongo Connected`);
-
+// console.log(`Mongo Connected`);
 //   } catch (err) {
-//     console.log(err);
+//     console.log(`Error is ${err}`);
 //   }
 // };
 // startApp();

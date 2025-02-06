@@ -1,5 +1,8 @@
 import { Router } from "express";
 const router = Router();
+// bcrypt
+import bcrypt from "bcrypt";
+const saltRounds = 10;
 
 router.get("/login", (req, res) => {
   res.render("login", {
@@ -20,14 +23,15 @@ router.post("/login", (req, res) => {
   res.redirect("/");
 });
 
-router.post("/register", (req, res) => {
-  console.log(req.body);
+router.post("/register", async (req, res) => {
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
   const userData = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    password: req.body.password,
+    password: hashedPassword,
   };
+  console.log(userData);
   res.redirect("/");
 });
 
