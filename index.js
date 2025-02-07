@@ -7,9 +7,13 @@ import AuthRoutes from "./routes/auth.js";
 import ProductRoutes from "./routes/products.js";
 // dotenv
 import * as dotenv from "dotenv";
+dotenv.config();
 // mongoose
 import mongoose from "mongoose";
-dotenv.config();
+// connect-flash
+import flash from "connect-flash";
+// express-session
+import session from "express-session";
 
 const app = express();
 const hbs = create({ defaultLayout: "main", extname: "hbs" });
@@ -23,6 +27,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // mongoose
 app.use(express.json());
+// connect-flash
+app.use(session({ secret: "Shox", resave: false, saveUninitialized: false }));
+app.use(flash());
 
 app.use(AuthRoutes);
 app.use(ProductRoutes);
